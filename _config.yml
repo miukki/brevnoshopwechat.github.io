@@ -37,3 +37,7 @@ defaults:
     values:
       layout: "default" # overrides previous default layout
       author: ""
+
+#sass:
+#    style: compressed
+exclude: ['bower_components']
