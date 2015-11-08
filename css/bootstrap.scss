@@ -24,7 +24,7 @@ here is only core files located
 // Reset and dependencies
 @import "../bootstrap/normalize";
 //@import "../bootstrap/print";
-//@import "../bootstrap/glyphicons";
+@import "glyphicons";
 
 // Core CSS
 @import "../bootstrap/scaffolding";
@@ -36,6 +36,10 @@ here is only core files located
 @import "../bootstrap/buttons";
 
 // Components
+@import "../bootstrap/component-animations";
+@import "../bootstrap/dropdowns";
+@import "../bootstrap/navs";
+@import "../bootstrap/navbar";
 
 // Components w/ JavaScript
 

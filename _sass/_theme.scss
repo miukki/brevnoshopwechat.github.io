@@ -10,7 +10,8 @@
 
 @import "variables";
 @import "../bootstrap/mixins";
-
+@import "sticky_footer";
+@import "icons";
 
 
 @mixin media-query($device) {
@@ -24,12 +25,7 @@
 }
 
 
-
-/**
- * Icons
- */
 .icon {
-
     > svg {
         display: inline-block;
         width: 16px;
@@ -42,56 +38,126 @@
     }
 }
 
-
-.site-nav {
-
-    .menu-icon {
-        display: none;
-    }
-
-
-    @include media-query($on-palm) {
-
-        .menu-icon {
-            display: block;
-            float: right;
-            width: 36px;
-            height: 26px;
-            line-height: 0;
-            padding-top: 10px;
-            text-align: center;
-
-            > svg {
-                width: 18px;
-                height: 15px;
-
-                path {
-                    fill: $gray;
-                }
-            }
-        }
-
-        .trigger {
-            clear: both;
-            display: none;
-            border:1px solid black;
-        }
-
-        &:hover .trigger {
-            display: block;
-            padding-bottom: 5px;
-        }
-
-        .page-link {
-            display: block;
-            padding: 5px 10px;
-
-            &:not(:last-child) {
-                margin-right: 0;
-            }
-            margin-left: 20px;
-        }
-    }
+.logo-header {
+  background: $gray-darker;
+  margin-top: 50px;
+  padding: 10px 0px;
+  .logo {
+      height: 40px;
+      width: auto;
+  }
 }
 
+.info {
+  margin: 0px;
+  padding-bottom: 40px;
+  color: $gray-lighter;
+  background: rgba(0,0,0,0.8);
+  @media (min-width: $screen-md-min) {
+    padding-bottom: 0px;
+  }
+
+  .wrap-icon {
+    margin-bottom: 20px;
+
+    .glyphicon-asterisk, .icon-heart, .icon-cog {
+      border: 2px solid;
+      border-radius: 100px;
+      text-align:center;
+      height: 45px; width: 45px;
+      display:block;
+      margin: 0 auto;
+    }
+    .icon-cog {
+      font-size: floor(($font-size-base * 2.6));
+      &:before {
+        top: 2px;
+        position: relative;
+      }
+    }
+    .glyphicon-asterisk {
+      font-size: floor(($font-size-base * 2.5));
+      &:before {
+        top: 4px;
+        position: relative;
+      }
+    }
+    .icon-heart {
+      font-size: floor(($font-size-base * 2.2)) !important;
+      &:before {
+        top: 6px;
+        position: relative;
+      }
+     }
+  }
+
+  ul {
+    @extend %fontLora;
+
+    margin-bottom: 20px;
+    @media (min-width: $screen-md-min) {
+      margin-bottom: 40px;
+    }
+
+    li {
+      padding-bottom: 5px;
+
+      text-align:center;
+      @media (min-width: $screen-md-min) {
+        text-align:left;
+      }
+
+
+    }
+  }
+  h4 {
+    padding: 40px 0px 20px;
+  }
+}
+
+.post {
+  h2 {
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'PT Sans Narrow', sans-serif;
+}
+
+
+@at-root {
+  // Import the fonts
+  @font-face {
+    font-family: Lora;
+    src: url("../fonts/Lora.woff2") format("woff2");
+  }
+}
+
+.about {
+  background: whitesmoke;
+  p {
+    font-size: $font-size-m;
+    text-rendering: optimizeLegibility;
+     @extend %fontLora;
+  }
+
+}
+
+%fontLora {
+  font-family: Lora, 'Cardo',"Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+}
+
+html {
+  color: $gray;
+  background: white url('../assets/imgs/bg_1.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+body {
+  background: rgba(255,255,255,0.8);
+}
 
